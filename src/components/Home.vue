@@ -22,7 +22,7 @@
       <div class="nav-top">
         <div class="nav-left">
           <div class="menu-fold" @click="toggle">
-            <i class="el-icon-s-fold"></i>
+            <el-icon style="cursor: pointer"><Fold /></el-icon>
           </div>
           <div class="bread">
             <BreadCrumb />
