@@ -152,7 +152,7 @@ export default {
     //   获取Composition API 上下文对象
     const { proxy } = getCurrentInstance();
     const app = getCurrentInstance();
-    console.log(app)
+    console.log(app);
     // 初始化用户表单对象
     const user = reactive({
       state: 1,
@@ -162,7 +162,7 @@ export default {
     // 初始化分页对象
     const pager = reactive({
       pageNum: 1,
-      pageSize: 10,
+      pageSize: 10, //开发中一般不用写，用后端的
     });
     // 选中用户列表对象
     const checkedUserIds = ref([]);
