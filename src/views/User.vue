@@ -162,7 +162,7 @@ export default {
     // 初始化分页对象
     const pager = reactive({
       pageNum: 1,
-      pageSize: 10, //开发中一般不用写，用后端的
+      pageSize: 10,
     });
     // 选中用户列表对象
     const checkedUserIds = ref([]);
