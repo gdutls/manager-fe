@@ -18,7 +18,10 @@
           />
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" class="btn-login" @click="login(userFormRef)"
+          <el-button
+            type="primary"
+            class="btn-login"
+            @click="login(userFormRef)"
             >登录</el-button
           >
         </el-form-item>
@@ -28,14 +31,24 @@
 </template>
 
 <script setup>
-import { reactive, ref } from '@vue/reactivity';
-import { useStore } from 'vuex'
-import { useRouter } from 'vue-router'
-import api from '@/api'
+import storage from "./../utils/storage";
+import { reactive, ref } from "@vue/reactivity";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
+import api from "@/api";
+import { onMounted } from "vue";
+
+//登录后不能跳转登录页
+onMounted(() => {
+  let userInfo = storage.getItem("userInfo") || {};
+  if (userInfo.token) {
+    router.push("/");
+  }
+});
 let user = reactive({
   userName: "admin",
   userPwd: "123456",
-})
+});
 let rules = {
   userName: [
     {
@@ -51,8 +64,8 @@ let rules = {
       trigger: "blur",
     },
   ],
-}
-const userFormRef = ref()
+};
+const userFormRef = ref();
 const store = useStore();
 const router = useRouter();
 function login(formRef) {

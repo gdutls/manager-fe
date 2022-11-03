@@ -35,7 +35,7 @@
             type="danger"
             @click="$router.push('/audit/approve')"
           >
-            <i class="el-icon-bell"></i>
+            <el-icon><Bell /></el-icon>
           </el-badge>
           <el-dropdown @command="handleLogout">
             <span class="user-link">
@@ -186,6 +186,9 @@ export default {
           cursor: pointer;
           color: #409eff;
         }
+      }
+      .el-dropdown {
+        margin-top: 18px;
       }
     }
     .wrapper {

@@ -78,13 +78,6 @@ function checkPermission(path) {
 // 导航守卫
 router.beforeEach(async (to, from, next) => {
   if (to.name) {
-    if (storage.getItem("userInfo")) {
-      if (to.path == "/login") {
-        next("/");
-      } else {
-        next();
-      }
-    }
     if (router.hasRoute(to.name)) {
       document.title = to.meta.title;
       next();
